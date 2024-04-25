@@ -1,0 +1,181 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Projeto02</name>
+    </assembly>
+    <members>
+        <member name="M:Projeto02.Controllers.ColaboradorController.GetColaboradors">
+             <summary>
+             retorna os cadastro existentes
+             </summary>
+             <returns></returns>
+            <remarks>
+            Sample request:
+            
+              Get do cadastro os dados retornados serão {
+            "codigo_colab": 1, 
+            "nome": "nome do colaborador",
+            "email": "email do colaborador",
+            "telefone": 18 99999999
+            "ctps": 00
+            "dtademissao": 30/11/23
+            "cpf": 333333333
+             }
+             </remarks>
+             <response code="200"> sucesso no retorno de dados </response>
+        </member>
+        <member name="M:Projeto02.Controllers.ColaboradorController.GetColaborador(System.Int32)">
+             <summary>
+             retorna o colaborador de acordo com o ID passado
+             </summary>
+            <remarks>
+            Retorna os dados do colaborador
+             Exemplo : GET/api/Colaborador/{id}
+             Substitua o Id pelo código de identificação do usuário 
+            }
+            </remarks>
+            GET: api/Colaborador/5
+        </member>
+        <member name="M:Projeto02.Controllers.ColaboradorController.PutColaborador(System.Int32,Projeto02.Models.Colaborador)">
+             <summary>
+             Atualiza o colaborador no banco de dados
+             </summary>
+             <remarks>
+             Atualiza os dados do colaborador
+             Exemplo : GET/api/Colaborador/{id}
+             Substitua o Id pelo código de identificação do usuário 
+            }
+             </remarks>
+        </member>
+        <member name="M:Projeto02.Controllers.ColaboradorController.PostColaborador(Projeto02.Models.Colaborador)">
+            <summary>
+            Cadastra um novo usuário
+            </summary>
+            <remarks>
+            exemplo:
+                   {
+              "telefone": "string",
+              "nome": "string",
+              "ctps": "string",
+              "dtadmissao": "2024-04-25",
+              "gerente": "string",
+              "email": "string",
+              "cpf": numérico
+            }
+            </remarks>
+            
+        </member>
+        <member name="M:Projeto02.Controllers.ColaboradorController.DeleteColaborador(System.Int32)">
+            <summary>
+            deleta um usuário existente
+            </summary>
+        </member>
+        <member name="M:Projeto02.Controllers.EntregaController.GetEntregas">
+             <summary>
+             retorna as entregas existentes
+             </summary>
+             <remarks>
+              {
+             "codigoEpi": 0,
+            "nome": "string",
+             "formaDu": 0
+                 }
+             </remarks>
+              /// <response code="200"> sucesso no retorno de dados </response>
+        </member>
+        <member name="M:Projeto02.Controllers.EntregaController.GetEntrega(System.Int32)">
+             <summary>
+             retorna a entrega de acordo com o ID passado
+             </summary>
+            <remarks>
+            Retorna os dados da entrega
+             Exemplo : GET/api//{id}
+             Substitua o Id pelo código de identificação do usuário 
+            }
+            </remarks>
+        </member>
+        <member name="M:Projeto02.Controllers.EntregaController.PutEntrega(System.Int32,Projeto02.Models.Entrega)">
+             <summary>
+             Atualiza a entrega no banco de dados
+             </summary>
+             <remarks>
+             Atualiza os dados da entrega
+             Exemplo : GET/api/Entrega/{id}
+             Substitua o Id pelo código de identificação do usuário 
+            }
+             </remarks>
+        </member>
+        <member name="M:Projeto02.Controllers.EntregaController.PostEntrega(Projeto02.Models.Entrega)">
+             <summary>
+             Cadastra uma nova entrega
+             </summary>
+             <remarks>
+             exemplo: {
+             "codigoEntrega": 0,
+             "codigoEpi": 0,
+              "codigoColab": 0,
+            "dtValidade": "2024-04-25",
+            "dtEntrega": "2024-04-25"
+            }
+             </remarks>
+             
+        </member>
+        <member name="M:Projeto02.Controllers.EntregaController.DeleteEntrega(System.Int32)">
+            <summary>
+            deleta uma entrega existente
+            </summary>
+        </member>
+        <member name="M:Projeto02.Controllers.EpiController.GetEpis">
+            <summary>
+            retorna os Epis existentes
+            </summary>
+            <remarks>
+                   {
+                "codigoEpi": 0,
+                "nome": "string",
+                "formaDu": 0
+              }
+            </remarks>
+             /// <response code="200"> sucesso no retorno de dados </response>
+        </member>
+        <member name="M:Projeto02.Controllers.EpiController.GetEpi(System.Int32)">
+             <summary>
+             retorna os Epis de acordo com o ID passado
+             </summary>
+            <remarks>
+            Retorna os dados do Epi
+             Exemplo :{
+               "codigoEpi": 0,
+             "nome": "string",
+               "formaDu": 0
+             }
+            </remarks>
+        </member>
+        <member name="M:Projeto02.Controllers.EpiController.PutEpi(System.Int32,Projeto02.Models.Epi)">
+            <summary>
+            Atualiza o Epi no banco de dados
+            </summary>
+            <remarks>
+            Atualiza os dados do Epi
+            Exemplo : {
+              "codigoEpi": 0,
+              "nome": "string",
+              "formaDu": 0
+            }
+            </remarks>
+        </member>
+        <member name="M:Projeto02.Controllers.EpiController.PostEpi(Projeto02.Models.Epi)">
+            <summary>
+            Cadastra um novo Epi
+            </summary>
+            <remarks>
+            exemplo: {
+              "codigoEpi": 0,
+              "nome": "string",
+              "formaDu": 0
+            }
+            </remarks>
+            
+        </member>
+    </members>
+</doc>
