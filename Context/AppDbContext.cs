@@ -1,17 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Projeto02.Models;
 
 namespace Projeto02.Context;
 
-public partial class AppDbContext : DbContext
+#pragma warning disable CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
+public partial class AppDbContext : IdentityDbContext<ApplicationUser>
+#pragma warning restore CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
 {
+#pragma warning disable CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
     public AppDbContext()
+#pragma warning restore CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
     {
     }
 
+#pragma warning disable CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
     public AppDbContext(DbContextOptions<AppDbContext> options)
+#pragma warning restore CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
         : base(options)
     {
     }
@@ -42,9 +49,7 @@ public partial class AppDbContext : DbContext
 
             entity.HasIndex(e => e.Telefone, "telefone").IsUnique();
 
-            entity.Property(e => e.CodigoColab)
-                .ValueGeneratedNever()
-                .HasColumnName("codigo_colab");
+            entity.Property(e => e.CodigoColab).HasColumnName("codigo_colab");
             entity.Property(e => e.Cpf).HasColumnName("cpf");
             entity.Property(e => e.Ctps)
                 .HasMaxLength(20)
@@ -72,16 +77,14 @@ public partial class AppDbContext : DbContext
 
             entity.HasIndex(e => e.CodigoEntrega, "idx_codigo_entrega");
 
-            entity.Property(e => e.CodigoEntrega)
-                .ValueGeneratedNever()
-                .HasColumnName("codigo_entrega");
+            entity.Property(e => e.CodigoEntrega).HasColumnName("codigo_entrega");
             entity.Property(e => e.CodigoColab).HasColumnName("codigo_colab");
             entity.Property(e => e.CodigoEpi).HasColumnName("codigo_epi");
             entity.Property(e => e.DtEntrega).HasColumnName("dt_entrega");
             entity.Property(e => e.DtValidade).HasColumnName("dt_validade");
 
             entity.HasOne(d => d.CodigoEntregaNavigation).WithOne(p => p.Entrega)
-                .HasForeignKey<Entrega>(d => d.CodigoEntrega)
+                .HasForeignKey<Entrega>(d => d.CodigoColab)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("codigo_colab");
 
@@ -99,16 +102,14 @@ public partial class AppDbContext : DbContext
 
             entity.HasIndex(e => e.CodigoEpi, "idx_codigo_epi");
 
-            entity.Property(e => e.CodigoEpi)
-                .ValueGeneratedNever()
-                .HasColumnName("codigo_epi");
+            entity.Property(e => e.CodigoEpi).HasColumnName("codigo_epi");
             entity.Property(e => e.FormaDu).HasColumnName("forma_du");
             entity.Property(e => e.Nome)
                 .HasMaxLength(120)
                 .HasColumnName("nome");
         });
-
-        OnModelCreatingPartial(modelBuilder);
+         
+        base.OnModelCreating(modelBuilder);
     }
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);

@@ -16,7 +16,7 @@ public partial class Entrega
 
     public DateOnly DtEntrega { get; set; }
     [JsonIgnore]
-    public virtual Colaborador CodigoEntregaNavigation { get; set; } = null!;
+    public virtual Colaborador? CodigoEntregaNavigation { get; set; } 
     [JsonIgnore]
-    public virtual Epi CodigoEpiNavigation { get; set; } = null!;
+    public virtual Epi? CodigoEpiNavigation { get; set; }
 }

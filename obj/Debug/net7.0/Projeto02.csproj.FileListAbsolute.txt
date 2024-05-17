@@ -280,3 +280,7 @@ C:\Dev\Projeto02\obj\Debug\net7.0\Projeto02.genruntimeconfig.cache
 C:\Dev\Projeto02\obj\Debug\net7.0\ref\Projeto02.dll
 C:\Dev\Projeto02\bin\Debug\net7.0\Projeto02.xml
 C:\Dev\Projeto02\obj\Debug\net7.0\Projeto02.xml
+C:\Dev\Projeto02\bin\Debug\net7.0\Projeto02.staticwebassets.runtime.json
+C:\Dev\Projeto02\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Dev\Projeto02\bin\Debug\net7.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Dev\Projeto02\bin\Debug\net7.0\Microsoft.AspNetCore.Identity.UI.dll

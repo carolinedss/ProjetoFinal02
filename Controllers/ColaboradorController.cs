@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -43,6 +44,7 @@ namespace Projeto02.Controllers
 
         // GET: api/Cadastro
         [HttpGet]
+        [Authorize]
         public async Task<ActionResult<IEnumerable<Colaborador>>> GetColaboradors()
         {
             if (_context.Colaboradors == null)
@@ -64,6 +66,7 @@ namespace Projeto02.Controllers
      
         /// GET: api/Colaborador/5
         [HttpGet("{id}")]
+        [Authorize]
         public async Task<ActionResult<Colaborador>> GetColaborador(int id)
         {
             if (_context.Colaboradors == null)
@@ -94,6 +97,7 @@ namespace Projeto02.Controllers
         // PUT: api/Colaborador/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
+        [Authorize("Admin")]
         public async Task<IActionResult> PutColaborador(int id, Colaborador colaborador)
         {
             if (id != colaborador.CodigoColab)
@@ -142,6 +146,7 @@ namespace Projeto02.Controllers
         // POST: api/Colaborador
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
+        [Authorize("Admin")]
         public async Task<ActionResult<Colaborador>> PostColaborador(Colaborador colaborador)
         {
             if (_context.Colaboradors == null)
@@ -175,6 +180,7 @@ namespace Projeto02.Controllers
 
         // DELETE: api/Colaborador/5
         [HttpDelete("{id}")]
+        [Authorize("Admin")]
         public async Task<IActionResult> DeleteColaborador(int id)
         {
             if (_context.Colaboradors == null)

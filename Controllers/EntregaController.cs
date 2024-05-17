@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -35,6 +36,7 @@ namespace Projeto02.Controllers
           
         // GET: api/Entrega
         [HttpGet]
+        [Authorize]
         public async Task<ActionResult<IEnumerable<Entrega>>> GetEntregas()
         {
           if (_context.Entregas == null)
@@ -55,6 +57,7 @@ namespace Projeto02.Controllers
         ///</remarks>
         // GET: api/Entrega/5
         [HttpGet("{id}")]
+        [Authorize]
         public async Task<ActionResult<Entrega>> GetEntrega(int id)
         {
           if (_context.Entregas == null)
@@ -84,6 +87,7 @@ namespace Projeto02.Controllers
         // PUT: api/Entrega/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
+        [Authorize("Admin")]
         public async Task<IActionResult> PutEntrega(int id, Entrega entrega)
         {
             if (id != entrega.CodigoEntrega)
@@ -129,6 +133,7 @@ namespace Projeto02.Controllers
         // POST: api/Entrega
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
+        [Authorize("Admin")]
         public async Task<ActionResult<Entrega>> PostEntrega(Entrega entrega)
         {
           if (_context.Entregas == null)
@@ -161,6 +166,7 @@ namespace Projeto02.Controllers
 
         // DELETE: api/Entrega/5
         [HttpDelete("{id}")]
+        [Authorize("Admin")]
         public async Task<IActionResult> DeleteEntrega(int id)
         {
             if (_context.Entregas == null)
