@@ -203,5 +203,22 @@ namespace Projeto02.Controllers
         {
             return (_context.Colaboradors?.Any(e => e.CodigoColab == id)).GetValueOrDefault();
         }
+
+        [HttpGet("Epis")]
+        [Authorize]
+        public async Task<ActionResult<IEnumerable<Entrega>>> GetEpiColab
+        (int id){
+            if (_context.Entregas == null){
+                return NotFound();
+            } else {
+                var epi = await _context.Entregas.Where(e => e.CodigoColab == id).ToListAsync();
+                if (epi == null){
+                    return NotFound();
+
+                } else{
+                    return epi;
+                }
+            }
+        }
     }
 }

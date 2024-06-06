@@ -104,6 +104,11 @@ public class UsuarioController : ControllerBase
     private UserToken BuildToken(UserInfo userInfo, IList<string>
     userRoles)
     {
+        int idCol = 0;
+        var colabolador = _context.Colaboradors.FirstOrDefault(c=>c.Cpf==userInfo.Cpf);
+        if (colabolador != null){
+            idCol = colabolador.CodigoColab;
+        }
         var claims = new List<Claim>
 {
 new Claim(JwtRegisteredClaimNames.UniqueName, userInfo.Email),
@@ -132,7 +137,8 @@ Guid.NewGuid().ToString())
         {
             Token = new JwtSecurityTokenHandler().WriteToken(token),
             Expiration = expiration,
-            Roles = userRoles
+            Roles = userRoles,
+            IdCol = idCol
         };
     }
 }

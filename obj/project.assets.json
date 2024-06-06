@@ -11489,11 +11489,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Dev\\Projeto02\\Projeto02.csproj",
+      "projectUniqueName": "C:\\Dev\\Projetoepifinal\\projetofinal\\Projeto02.csproj",
       "projectName": "Projeto02",
-      "projectPath": "C:\\Dev\\Projeto02\\Projeto02.csproj",
+      "projectPath": "C:\\Dev\\Projetoepifinal\\projetofinal\\Projeto02.csproj",
       "packagesPath": "C:\\Users\\Aluno Dev\\.nuget\\packages\\",
-      "outputPath": "C:\\Dev\\Projeto02\\obj\\",
+      "outputPath": "C:\\Dev\\Projetoepifinal\\projetofinal\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Aluno Dev\\AppData\\Roaming\\NuGet\\NuGet.Config"
